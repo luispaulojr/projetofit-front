@@ -1,29 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { ReactiveFormsModule } from "@angular/forms";
-import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from "./services/auth.service";
-import { MaterialModule } from "./modules/material.module";
+import { AuthService } from "./auth/service/auth.service";
+import {AuthModule} from "./auth";
+import {AlunoModule} from "./aluno";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    MaterialModule,
-    BrowserAnimationsModule,
+    AuthModule,
+    AlunoModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClient } from "@angular/common/http";
-import { AuthService } from "./services/auth.service";
+import { AuthService } from "./auth/service/auth.service";
 
 describe('AppComponent', () => {
 
@@ -34,16 +34,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'projetofit-front'`, () => {
+  it(`should have as title 'Projetofit'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('projetofit-front');
+    expect(app.title).toEqual('Projetofit');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('projetofit-front app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Projetofit app is running!');
   });
 });

@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Usuario} from "../domain/interface/usuario";
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {shareReplay} from 'rxjs/operators'
 import * as moment from "moment";
 
@@ -9,8 +8,7 @@ import * as moment from "moment";
 })
 export class AuthService {
 
-  constructor(private readonly http: HttpClient) {
-  }
+  constructor(private readonly http: HttpClient) {}
 
   login(username: string, password: string) {
     let headers = {
