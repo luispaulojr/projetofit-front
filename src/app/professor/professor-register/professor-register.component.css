@@ -46,25 +46,12 @@ mat-card-content {
   margin-left: 8px;
 }
 
-mat-slider {
-  width: 300px;
-}
-
-.mat-slider-thumb-label {
-  transform: rotate(45deg) !important;
-  border-radius: 50% 50% 0 !important;
-}
-
-.mat-slider-thumb {
-  transform: scale(0) !important;
-}
-
-.mat-slider-thumb-label-text {
-  opacity: 1 !important;
-}
-
 .mat-card-subtitle {
   margin-top: 20px;
   margin-bottom: 0;
   font-weight: bold;
+}
+
+.mat-divider {
+  margin-bottom: 20px !important;
 }

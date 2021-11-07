@@ -1,17 +1,19 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from "./auth/service/auth.service";
+import {NgModule} from "@angular/core";
+import {BrowserModule} from "@angular/platform-browser";
+import {AppRoutingModule} from "./app-routing.module";
+import {AppComponent} from "./app.component";
+import {ServiceWorkerModule} from "@angular/service-worker";
+import {environment} from "../environments/environment";
+import {HttpClientModule} from "@angular/common/http";
+import {AuthService} from "./auth/service/auth.service";
 import {AuthModule} from "./auth";
 import {AlunoModule} from "./aluno";
+import {ProfessorModule} from "./professor";
+import {NutricionistaModule} from "./nutricionista";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,14 +21,16 @@ import {AlunoModule} from "./aluno";
     AppRoutingModule,
     AuthModule,
     AlunoModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
+    ProfessorModule,
+    NutricionistaModule,
+    ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    })
+      registrationStrategy: "registerWhenStable:30000",
+    }),
   ],
   providers: [AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,1 +1,1 @@
-export * from './aluno.module'
+export * from "./aluno.module";

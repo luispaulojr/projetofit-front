@@ -1,8 +1,8 @@
-import {UserStatus} from "../enums/user_status.enum";
-import {UserType} from "../enums/user_type.enum";
 import {GeneroType} from "../enums/genero_type.enum";
+import {UserType} from "../enums/user_type.enum";
+import {UserStatus} from "../enums/user_status.enum";
 
-export interface Aluno {
+export interface Usuario {
   nome: string;
   genero: GeneroType;
   login: string;
@@ -12,8 +12,5 @@ export interface Aluno {
   tipo: UserType;
   status: UserStatus;
   dataNascimento: string;
-  altura: string;
-  peso: string;
-  circAbdominal: string;
 }
 

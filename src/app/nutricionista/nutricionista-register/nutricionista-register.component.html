@@ -57,44 +57,32 @@
       </p>
 
       <p>
-        <label class="altura-margin">Altura: </label>
-        <mat-slider
-          thumbLabel
-          [displayWith]="formatLabel"
-          tickInterval="0"
-          step="0.01"
-          min="0"
-          max="2.50"
-          aria-label="units" formControlName="altura">
-        </mat-slider>
+        <mat-form-field>
+          <input type="text" matInput placeholder="CRN" formControlName="crn">
+        </mat-form-field>
+      </p>
+
+
+      <mat-card-subtitle>Consultório</mat-card-subtitle>
+      <mat-divider [inset]="true"></mat-divider>
+
+      <p>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Logradouro" formControlName="logradouro">
+        </mat-form-field>
       </p>
 
       <p>
-        <label class="peso-margin">Peso: </label>
-        <mat-slider
-          thumbLabel
-          [displayWith]="formatLabel"
-          tickInterval="0"
-          step="0.01"
-          min="0"
-          max="200.00"
-          aria-label="units" formControlName="peso">
-        </mat-slider>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Bairro" formControlName="bairro">
+        </mat-form-field>
       </p>
 
       <p>
-        <label class="circAbdominal-margin">Circunferência abdominal: </label>
-        <mat-slider
-          thumbLabel
-          [displayWith]="formatLabel"
-          tickInterval="0"
-          step="0.1"
-          min="0"
-          max="100.0"
-          aria-label="units" formControlName="circAbdominal">
-        </mat-slider>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Cidade" formControlName="cidade">
+        </mat-form-field>
       </p>
-
       <div class="button">
         <button type="submit" mat-raised-button color="primary">Registrar</button>
       </div>
