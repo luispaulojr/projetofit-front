@@ -4,10 +4,10 @@ import { NutricionistaRegisterComponent } from "./nutricionista-register/nutrici
 import { ReactiveFormsModule } from "@angular/forms";
 import { NutricionistaPerfilComponent } from "./nutricionista-perfil/nutricionista-perfil.component";
 import { MaterialModule } from "../modules/material.module";
-import { IconsConstant } from "../domain/constants/icons.constant";
+import { IconsModule } from "../modules/icons.module";
 
 @NgModule({
   declarations: [NutricionistaRegisterComponent, NutricionistaPerfilComponent],
-  imports: [CommonModule, ReactiveFormsModule, MaterialModule, IconsConstant],
+  imports: [CommonModule, ReactiveFormsModule, MaterialModule, IconsModule],
 })
 export class NutricionistaModule {}

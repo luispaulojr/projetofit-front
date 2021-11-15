@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
-import { Icons } from "../icons.constants";
+import { Icons } from "../domain/constants/icons.constants";
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 
 @NgModule({
   exports: [],
 })
-export class IconsConstant {
+export class IconsModule {
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIconLiteral(
       "weight-kg",

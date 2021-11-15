@@ -4,10 +4,10 @@ import { ProfessorRegisterComponent } from "./professor-register/professor-regis
 import { ReactiveFormsModule } from "@angular/forms";
 import { ProfessorPerfilComponent } from "./professor-perfil/professor-perfil.component";
 import { MaterialModule } from "../modules/material.module";
-import { IconsConstant } from "../domain/constants/icons.constant";
+import { IconsModule } from "../modules/icons.module";
 
 @NgModule({
   declarations: [ProfessorRegisterComponent, ProfessorPerfilComponent],
-  imports: [CommonModule, ReactiveFormsModule, MaterialModule, IconsConstant],
+  imports: [CommonModule, ReactiveFormsModule, MaterialModule, IconsModule],
 })
 export class ProfessorModule {}

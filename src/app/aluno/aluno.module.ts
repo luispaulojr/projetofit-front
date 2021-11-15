@@ -4,11 +4,11 @@ import { AlunoRegisterComponent } from "./aluno-register/aluno-register.componen
 import { ReactiveFormsModule } from "@angular/forms";
 import { AlunoPerfilComponent } from "./aluno-perfil/aluno-perfil.component";
 import { MaterialModule } from "../modules/material.module";
-import { IconsConstant } from "../domain/constants/icons.constant";
+import { IconsModule } from "../modules/icons.module";
 
 @NgModule({
   declarations: [AlunoRegisterComponent, AlunoPerfilComponent],
-  imports: [CommonModule, ReactiveFormsModule, MaterialModule, IconsConstant],
+  imports: [CommonModule, ReactiveFormsModule, MaterialModule, IconsModule],
   providers: [],
 })
 export class AlunoModule {}

@@ -11,7 +11,7 @@ import { MaterialModule } from "./modules/material.module";
 import { AuthModule } from "./auth/auth.module";
 import { ProfessorModule } from "./professor/professor.module";
 import { NutricionistaModule } from "./nutricionista/nutricionista.module";
-import { IconsConstant } from "./domain/constants/icons.constant";
+import { IconsModule } from "./modules/icons.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,7 +30,7 @@ import { IconsConstant } from "./domain/constants/icons.constant";
       registrationStrategy: "registerWhenStable:30000",
     }),
     MaterialModule,
-    IconsConstant,
+    IconsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
