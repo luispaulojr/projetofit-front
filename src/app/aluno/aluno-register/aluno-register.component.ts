@@ -1,10 +1,10 @@
-import {Component, Input} from "@angular/core";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
-import {AlunoService} from "../service/aluno.service";
-import {Aluno} from "../../domain/interface/aluno.model";
-import {UserStatus} from "../../domain/enums/user_status.enum";
-import {UserType} from "../../domain/enums/user_type.enum";
+import { Component, Input } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { AlunoService } from "../service/aluno.service";
+import { Aluno } from "../../domain/interface/aluno.model";
+import { UserStatus } from "../../domain/enums/user_status.enum";
+import { UserType } from "../../domain/enums/user_type.enum";
 
 @Component({
   selector: "app-aluno-register",
@@ -17,10 +17,16 @@ export class AlunoRegisterComponent {
   form: FormGroup;
   @Input() error?: string | null;
 
-  constructor(private fb: FormBuilder,
-              private alunoService: AlunoService,
-              private router: Router) {
-    this.maxDate = new Date(new Date().getFullYear() - 18, new Date().getMonth() + 1, new Date().getDay());
+  constructor(
+    private fb: FormBuilder,
+    private alunoService: AlunoService,
+    private router: Router
+  ) {
+    this.maxDate = new Date(
+      new Date().getFullYear() - 18,
+      new Date().getMonth() + 1,
+      new Date().getDay()
+    );
     this.form = this.fb.group({
       nome: ["", Validators.required],
       genero: ["", Validators.required],
@@ -50,12 +56,9 @@ export class AlunoRegisterComponent {
     newAluno.genero = +newAluno.genero;
 
     if (newAluno) {
-      const result = this.alunoService.addAluno(newAluno)
-          .subscribe(
-              () => {
-                this.router.navigateByUrl("/").then((router) => router);
-              },
-          );
+      const result = this.alunoService.addAluno(newAluno).subscribe(() => {
+        this.router.navigateByUrl("/").then((router) => router);
+      });
 
       console.log(result);
     }

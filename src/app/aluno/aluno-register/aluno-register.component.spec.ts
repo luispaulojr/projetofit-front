@@ -1,16 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { AlunoRegisterComponent } from './aluno-register.component';
+import { AlunoRegisterComponent } from "./aluno-register.component";
 
-describe('AlunoRegisterComponent', () => {
+describe("AlunoRegisterComponent", () => {
   let component: AlunoRegisterComponent;
   let fixture: ComponentFixture<AlunoRegisterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AlunoRegisterComponent ]
-    })
-    .compileComponents();
+      declarations: [AlunoRegisterComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('AlunoRegisterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

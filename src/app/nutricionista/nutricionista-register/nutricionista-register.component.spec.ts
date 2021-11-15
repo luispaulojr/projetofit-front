@@ -1,16 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { NutricionistaRegisterComponent } from './nutricionista-register.component';
+import { NutricionistaRegisterComponent } from "./nutricionista-register.component";
 
-describe('NutricionistaRegisterComponent', () => {
+describe("NutricionistaRegisterComponent", () => {
   let component: NutricionistaRegisterComponent;
   let fixture: ComponentFixture<NutricionistaRegisterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NutricionistaRegisterComponent ]
-    })
-    .compileComponents();
+      declarations: [NutricionistaRegisterComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('NutricionistaRegisterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

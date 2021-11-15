@@ -32,10 +32,28 @@ mat-card-content {
   background-color: red;
 }
 
-.button {
-  display: flex;
+.button-login {
   justify-content: flex-end;
 }
+
 .mat-raised-button {
   background-color: #b91a1a !IMPORTANT;
+}
+
+.button-row button,
+.button-row a {
+  margin-right: 8px;
+}
+
+::ng-deep .mat-card{
+  border-radius: 12px !important;
+  box-shadow: 0 6px 10px -4px rgba(0,0,0,.15) !important;
+  background-color: #fff !important;
+  color: #252422 !important;
+  margin-bottom: 20px !important;
+  position: relative !important;
+  border: 0 !important;
+  transition: box-shadow .2s ease,-webkit-transform .3s cubic-bezier(.34,2,.6,1) !important;
+  transition: transform .3s cubic-bezier(.34,2,.6,1),box-shadow .2s ease !important;
+  transition: transform .3s cubic-bezier(.34,2,.6,1),box-shadow .2s ease,-webkit-transform .3s cubic-bezier(.34,2,.6,1) !important;
 }

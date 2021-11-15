@@ -1,7 +1,6 @@
-import {Usuario} from "./usuario.model";
+import { Usuario } from "./usuario.model";
 
-export interface Aluno extends  Usuario{
-
+export interface Aluno extends Usuario {
   altura: string;
   peso: string;
   circAbdominal: string;

@@ -17,7 +17,14 @@
 
       <div class="button">
         <button type="submit" mat-raised-button color="primary">Login</button>
+        <button mat-button [matMenuTriggerFor]="menu">Registrar</button>
       </div>
+
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item href="/aluno/register">Aluno</a>
+        <a mat-menu-item href="/professor/register">Professor</a>
+        <a mat-menu-item href="/nutricionista/register">Nutricionista</a>
+      </mat-menu>
 
     </form>
   </mat-card-content>

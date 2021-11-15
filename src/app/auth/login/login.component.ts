@@ -1,7 +1,7 @@
-import {Component, Input} from "@angular/core";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../service/auth.service";
-import {Router} from "@angular/router";
+import { Component, Input } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AuthService } from "../service/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-login",
@@ -12,9 +12,11 @@ export class LoginComponent {
   form: FormGroup;
   @Input() error?: string | null;
 
-  constructor(private fb: FormBuilder,
-              private authService: AuthService,
-              private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.form = this.fb.group({
       username: ["", Validators.required],
       password: ["", Validators.required],
@@ -24,13 +26,10 @@ export class LoginComponent {
   login() {
     const val = this.form.value;
     if (val.username && val.password) {
-      this.authService.login(val.username, val.password)
-          .subscribe(
-              () => {
-                console.log("User is logged in");
-                this.router.navigateByUrl("/").then((router) => router);
-              },
-          );
+      this.authService.login(val.username, val.password).subscribe(() => {
+        console.log("User is logged in");
+        this.router.navigateByUrl("/").then((router) => router);
+      });
     }
   }
 }

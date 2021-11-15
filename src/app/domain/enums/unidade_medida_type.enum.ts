@@ -6,5 +6,5 @@ export enum UnidadeMedidaType {
   COLHER,
   XICARA,
   FOLHA,
-  UNIDADE
+  UNIDADE,
 }

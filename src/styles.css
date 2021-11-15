@@ -1,5 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #f4f3ef; }
 
+.basic-container {
+  padding: 30px;
+}
+
+.mat-slider-thumb-label {
+  width: 38px !important;
+  height: 38px !important;
+}
+
+.mat-slider-horizontal .mat-slider-thumb-label {
+  top: -50px !important;
+}

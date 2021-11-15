@@ -1,20 +1,20 @@
-import {NgModule} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
-import {AppRoutingModule} from "./app-routing.module";
-import {AppComponent} from "./app.component";
-import {ServiceWorkerModule} from "@angular/service-worker";
-import {environment} from "../environments/environment";
-import {HttpClientModule} from "@angular/common/http";
-import {AuthService} from "./auth/service/auth.service";
-import {AuthModule} from "./auth";
-import {AlunoModule} from "./aluno";
-import {ProfessorModule} from "./professor";
-import {NutricionistaModule} from "./nutricionista";
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { ServiceWorkerModule } from "@angular/service-worker";
+import { environment } from "../environments/environment";
+import { HttpClientModule } from "@angular/common/http";
+import { AuthService } from "./auth/service/auth.service";
+import { AlunoModule } from "./aluno/aluno.module";
+import { MaterialModule } from "./modules/material.module";
+import { AuthModule } from "./auth/auth.module";
+import { ProfessorModule } from "./professor/professor.module";
+import { NutricionistaModule } from "./nutricionista/nutricionista.module";
+import { IconsConstant } from "./domain/constants/icons.constant";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -29,8 +29,10 @@ import {NutricionistaModule} from "./nutricionista";
       // or after 30 seconds (whichever comes first).
       registrationStrategy: "registerWhenStable:30000",
     }),
+    MaterialModule,
+    IconsConstant,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,6 +1,6 @@
-import {GeneroType} from "../enums/genero_type.enum";
-import {UserType} from "../enums/user_type.enum";
-import {UserStatus} from "../enums/user_status.enum";
+import { GeneroType } from "../enums/genero_type.enum";
+import { UserType } from "../enums/user_type.enum";
+import { UserStatus } from "../enums/user_status.enum";
 
 export interface Usuario {
   nome: string;
@@ -13,4 +13,3 @@ export interface Usuario {
   status: UserStatus;
   dataNascimento: string;
 }
-

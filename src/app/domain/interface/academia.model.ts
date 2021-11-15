@@ -1,4 +1,4 @@
-import {Endereco} from "./endereco.model";
+import { Endereco } from "./endereco.model";
 
 export interface Academia {
   razaoSocial: string;

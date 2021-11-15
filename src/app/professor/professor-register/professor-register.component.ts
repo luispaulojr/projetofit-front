@@ -1,11 +1,11 @@
-import {Component, Input} from "@angular/core";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
-import {UserStatus} from "../../domain/enums/user_status.enum";
-import {UserType} from "../../domain/enums/user_type.enum";
-import {Professor} from "../../domain/interface/professor.model";
-import {ProfessorService} from "../service/professor.service";
-import {GeneroType} from "../../domain/enums/genero_type.enum";
+import { Component, Input } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { UserStatus } from "../../domain/enums/user_status.enum";
+import { UserType } from "../../domain/enums/user_type.enum";
+import { Professor } from "../../domain/interface/professor.model";
+import { ProfessorService } from "../service/professor.service";
+import { GeneroType } from "../../domain/enums/genero_type.enum";
 
 @Component({
   selector: "app-professor-register",
@@ -18,11 +18,16 @@ export class ProfessorRegisterComponent {
   form: FormGroup;
   @Input() error?: string | null;
 
-  constructor(private fb: FormBuilder,
-              private professorService: ProfessorService,
-              private router: Router) {
-    this.maxDate = new Date(new Date().getFullYear() - 18,
-        new Date().getMonth() + 1, new Date().getDay());
+  constructor(
+    private fb: FormBuilder,
+    private professorService: ProfessorService,
+    private router: Router
+  ) {
+    this.maxDate = new Date(
+      new Date().getFullYear() - 18,
+      new Date().getMonth() + 1,
+      new Date().getDay()
+    );
     this.form = this.fb.group({
       nome: ["", Validators.required],
       genero: ["", Validators.required],
@@ -31,10 +36,9 @@ export class ProfessorRegisterComponent {
       telefone: ["", Validators.required],
       dataNascimento: ["", Validators.required],
       senha: ["", Validators.required],
-      cref: ["",
-        [
-          Validators.pattern(/^-?(0|[1-9]\d*)?$/),
-          Validators.required],
+      cref: [
+        "",
+        [Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.required],
       ],
       razaoSocial: ["", Validators.required],
       cnpj: ["", Validators.required],
@@ -45,22 +49,22 @@ export class ProfessorRegisterComponent {
   }
 
   register() {
-    const newProfessor =
-      ProfessorRegisterComponent.converter(this.form.getRawValue());
+    const newProfessor = ProfessorRegisterComponent.converter(
+      this.form.getRawValue()
+    );
 
     if (newProfessor) {
-      const result = this.professorService.addProfessor(newProfessor)
-          .subscribe(
-              () => {
-                this.router.navigateByUrl("/").then((router) => router);
-              },
-          );
+      const result = this.professorService
+        .addProfessor(newProfessor)
+        .subscribe(() => {
+          this.router.navigateByUrl("/").then((router) => router);
+        });
 
       console.log(result);
     }
   }
 
-  private static converter(rawValue: any) : Professor {
+  private static converter(rawValue: any): Professor {
     return {
       nome: rawValue.nome,
       genero: +rawValue.genero,

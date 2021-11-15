@@ -1,7 +1,7 @@
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {shareReplay} from "rxjs/operators";
-import {Nutricionista} from "../domain/interface/nutricionista.model";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { shareReplay } from "rxjs/operators";
+import { Nutricionista } from "../domain/interface/nutricionista.model";
 
 @Injectable({
   providedIn: "root",
@@ -14,8 +14,12 @@ export class NutricionistaService {
       "Content-Type": "application/json",
     };
 
-    return this.http.post("http://localhost/api/nutricionista", JSON.stringify(nutricionista), {headers}).pipe(
-        shareReplay(),
-    );
+    return this.http
+      .post(
+        "http://localhost/api/nutricionista",
+        JSON.stringify(nutricionista),
+        { headers }
+      )
+      .pipe(shareReplay());
   }
 }
