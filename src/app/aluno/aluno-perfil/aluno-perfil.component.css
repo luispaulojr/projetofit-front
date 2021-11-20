@@ -359,3 +359,9 @@
   display: inline-block !important;
   width: 60%;
 }
+
+.genero-icon {
+  line-height:24px;
+  display: inline-flex;
+  vertical-align: top;
+}

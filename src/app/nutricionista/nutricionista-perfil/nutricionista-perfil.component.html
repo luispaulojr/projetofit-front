@@ -1,1 +1,155 @@
-<p>nutricionista-perfil works!</p>
+<!-- Main Card -->
+<mat-card>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+
+        <div class="card hovercard">
+          <div class="cardheader">
+
+          </div>
+          <div class="avatar">
+            <img alt="avatar" src="assets/profile.JPG">
+          </div>
+          <div class="info">
+            <div class="title">
+              <p>{{nutricionista.nome}}<span>&nbsp;<mat-icon class="genero-icon">{{nutricionista.genero == 'MASCULINO' ? 'male' : 'female'}}</mat-icon></span></p>
+            </div>
+            <br />
+          </div>
+
+          <mat-divider [inset]="true"></mat-divider>
+          <div class="train">
+            <div class="desc"><h5>12 <br><small>Alunos</small></h5></div>
+            <div class="desc"><h5>20 <br><small>Dietas</small></h5></div>
+            <div class="desc"><h5>4 <br><small>Receitas</small></h5></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</mat-card>
+
+<!-- Details Card -->
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title class="details-card">Dados Pessoais</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="form-container">
+      <form [formGroup]="options">
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>Nome</mat-label>
+          <input type="text" matInput placeholder="Campo obrigatório" value="{{nutricionista.nome}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>Login</mat-label>
+          <input type="text" matInput placeholder="Campo obrigatório" value="{{nutricionista.login}}" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>email</mat-label>
+          <input type="email" matInput placeholder="Campo obrigatório" value="{{nutricionista.email}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>Telefone</mat-label>
+          <input type="tel" matInput placeholder="Campo obrigatório" value="{{nutricionista.telefone}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Data de Nascimento</mat-label>
+          <input [matDatepicker]="picker" value="{{nutricionista.dataNascimento}}" matInput>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>CRN</mat-label>
+          <input type="number" matInput placeholder="Campo obrigatório" value="{{nutricionista.crn}}" disabled>
+        </mat-form-field>
+        <mat-divider [inset]="true" style="margin-bottom: 2%"></mat-divider>
+        <mat-card-header>
+          <mat-card-title class="details-card">Dados Consultório</mat-card-title>
+        </mat-card-header>
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>Logradouro</mat-label>
+          <input type="text" matInput placeholder="Campo obrigatório" value="{{nutricionista.logradouro}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>Bairro</mat-label>
+          <input type="text" matInput placeholder="Campo obrigatório" value="{{nutricionista.bairro}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>Cidade</mat-label>
+          <input type="text" matInput placeholder="Campo obrigatório" value="{{nutricionista.cidade}}">
+        </mat-form-field>
+        <div>
+          <label class="label-account-manager">Gerenciar a conta: </label>
+          <mat-radio-group [formControl]="userStatus">
+            <mat-radio-button value="0">Ativo</mat-radio-button>
+            <mat-radio-button value="1">Inativo</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="warn">Atualizar</button>
+  </mat-card-actions>
+
+  <mat-card-header>
+    <mat-card-title>Cadastros</mat-card-title>
+    <mat-card-subtitle>Últimos 3 cadastros feitos</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Receitas">
+        <mat-accordion *ngFor="let exercicio of nutricionista.exercicios">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{exercicio.nome}}
+              </mat-panel-title>
+              <mat-panel-description>
+                {{exercicio.musculo}} - {{exercicio.repeticoes}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <img mat-card-image src="{{exercicio.foto.url}}"
+                 alt="{{exercicio.foto.nome}}">
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </mat-tab>
+      <mat-tab label="Dietas">
+        <mat-accordion *ngFor="let receita of dieta.receitas">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{receita.refeicao}}
+              </mat-panel-title>
+              <mat-panel-description>
+                {{receita.horario}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p><strong>Nome:</strong> {{receita.nome}}</p>
+            <p><strong>Objetivo:</strong> {{receita.objetivo}}</p>
+            <mat-list>
+              <div mat-subheader><strong>Ingredientes</strong></div>
+              <mat-list-item *ngFor="let ingrediente of receita.ingredientes">
+                <div mat-line><strong>Nome:</strong> {{ingrediente.nome}}</div>
+                <div mat-line><strong>Quantidade:</strong> {{ingrediente.quantidade}}</div>
+                <div mat-line><strong>Tipo:</strong> {{ingrediente.tipo}}</div>
+                <div mat-line><strong>Complemento:</strong> {{ingrediente.complemento}}</div>
+              </mat-list-item>
+            </mat-list>
+            <p><strong>Preparo:</strong> {{receita.preparo}}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+
+<!-- Train Card -->
