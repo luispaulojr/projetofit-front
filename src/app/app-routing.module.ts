@@ -11,6 +11,7 @@ import { NutricionistaPerfilComponent } from "./nutricionista/nutricionista-perf
 import { ExercicioRegisterComponent } from "./exercicio/exercicio-register/exercicio-register.component";
 import { SerieDeExerciciosRegisterComponent } from "./serie-de-exercicios/serie-de-exercicios-register/serie-de-exercicios-register.component";
 import { DietaRegisterComponent } from "./dieta/dieta-register/dieta-register.component";
+import { ReceitaRegisterComponent } from "./receita/receita-register/receita-register.component";
 
 const routes: Routes = [
   { path: "", component: AppComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
     component: SerieDeExerciciosRegisterComponent,
   },
   { path: "dieta/register", component: DietaRegisterComponent },
+  { path: "receita/register", component: ReceitaRegisterComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

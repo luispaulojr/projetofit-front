@@ -354,7 +354,6 @@
   padding-top: 8px !important;
 }
 
-/** No CSS for this example */
 .mat-expansion-panel-header-description, .mat-expansion-panel-header-title {
   display: inline-block !important;
   width: 60%;

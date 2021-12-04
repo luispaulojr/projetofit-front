@@ -1,0 +1,51 @@
+
+<mat-card>
+  <mat-card-title>Register</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="register()">
+      <mat-card-subtitle>Dados da receita</mat-card-subtitle>
+      <mat-divider [inset]="true"></mat-divider>
+
+      <p>
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input type="text" matInput placeholder="Nome da receita" formControlName="nome">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <mat-label>Refeição</mat-label>
+          <input type="text" matInput placeholder="Refeição sugerida" formControlName="refeicao">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <mat-label>Horário</mat-label>
+          <input type="time" matInput formControlName="horario">
+        </mat-form-field>
+      </p>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Objetivo</mat-label>
+        <textarea matInput placeholder="Informe para que se destina a receita" formControlName="objetivo"></textarea>
+      </mat-form-field>
+
+      <mat-card-subtitle>Ingrediente(s)</mat-card-subtitle>
+      <mat-divider [inset]="true"></mat-divider>
+
+      <p>
+        <mat-form-field>
+          <mat-label>Ingrediente</mat-label>
+          <input type="text" matInput placeholder="Informe o nome do ingrediente desejado">
+        </mat-form-field>
+      </p>
+
+      <div class="button">
+        <button type="submit" mat-raised-button color="primary">Registrar</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>

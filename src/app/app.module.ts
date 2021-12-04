@@ -12,6 +12,9 @@ import { AuthModule } from "./auth/auth.module";
 import { ProfessorModule } from "./professor/professor.module";
 import { NutricionistaModule } from "./nutricionista/nutricionista.module";
 import { IconsModule } from "./modules/icons.module";
+import { ExercicioModule } from "./exercicio/exercicio.module";
+import { ReceitaModule } from "./receita/receita.module";
+import { SerieDeExerciciosModule } from "./serie-de-exercicios/serie-de-exercicios.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +26,9 @@ import { IconsModule } from "./modules/icons.module";
     AlunoModule,
     ProfessorModule,
     NutricionistaModule,
+    ExercicioModule,
+    ReceitaModule,
+    SerieDeExerciciosModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
